@@ -83,6 +83,7 @@ def start():
     marks()
 
 def marks():
+    totals=0
     outof=int(input("Out of:"))
     amountpeople=int(input("How many people?:"))
     x=False
@@ -91,7 +92,7 @@ def marks():
         while x != True:
             sn=input("Student name: ")
             sm=int(input("Student mark (out of {})".format(outof)))
-            sp="{}%".format(round(100*(sm/outof))) 
+            sp="{}%".format(round(100*(sm/outof)))
             if sm <= outof and sm >= 0:
                 x=True
             else:
@@ -102,6 +103,10 @@ def marks():
     for i in range(len(tname)):
         jsds.append("{}:{}:{}".format(tmark[i],tname[i],tperc[i]))
     jsds.sort()
+    for i in range(len(tmark)):
+        totals+=tmark[i]
+    total=totals%len(tmark)
+    print("Average mark: {}".format(total))
     for i in range(len(tname)):
         print(jsds[i])
         
