@@ -40,11 +40,13 @@ def register():
     f=open("utp.txt","a+")
     f.write("\n{}".format(utp))
     f.close()
+    print("Registered!")
+    init()
 
 def login():
     print("Welcome back please login:")   
     b=False
-    lusername=input("Username:")
+    lusername=input("Username:").lower()
     lpassword=input("Password:")
     f=open("utp.txt","r")
     for line in f:
@@ -78,7 +80,7 @@ def init():
         login()
 
 def start():
-    print()
+    marks()
 
 def marks():
     outof=int(input("Out of:"))
@@ -99,17 +101,19 @@ def marks():
         tperc.append(sp)
     for i in range(len(tname)):
         jsds.append("{}:{}:{}".format(tmark[i],tname[i],tperc[i]))
+    jsds.sort()
     for i in range(len(tname)):
         print(jsds[i])
         
     hiks=yorn("Would you like to save these marks? ")
     if hiks == True:
-        filedir=input("Enter a file directory (C:\...): ")
         filename=input("Enter a file name: ")
-        f=open("{}.txt".format(filedir,filename),"a+")
+        f=open("{}.txt".format(filename),"a+")
         for i in range(len(jsds)):
             f.write("\n{}".format(jsds[i]))
-            f.close()
+        f.close()
+        print("Done!")
+        print("Saved at \"/{}\"".format(filename))
     else:
         print("Ok.")
         init()
@@ -117,6 +121,6 @@ def marks():
 
 
 
-#init()
-marks()
+init()
+#marks()
 #conn.close()
