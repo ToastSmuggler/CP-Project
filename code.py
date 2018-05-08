@@ -101,7 +101,7 @@ def marks():
         tperc.append(sp)
     for i in range(len(tname)):
         jsds.append("{}:{}:{}".format(tmark[i],tname[i],tperc[i]))
-    jsds.sort()
+    jsds.sort(reverse=True)
     for i in range(len(tname)):
         print(jsds[i])
         
