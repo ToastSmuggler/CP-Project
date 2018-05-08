@@ -59,9 +59,9 @@ def login():
             #print(sp)
             if lusername==username and lpassword==password:
                 b=True
-                ##print(b)
                 break
             else:
+                print("Incorrect username / password")
                 continue
         else:
             continue
