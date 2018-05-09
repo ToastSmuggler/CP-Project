@@ -3,9 +3,6 @@ import random
 #import sqlite3
 #conn = sqlite3.connect('example.db')
 #c = conn.cursor()
-name=[]
-mark=[]
-perc=[]
 tname=[]
 tmark=[]
 tperc=[]
