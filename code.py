@@ -3,9 +3,6 @@ import random
 #import sqlite3
 #conn = sqlite3.connect('example.db')
 #c = conn.cursor()
-name=[]
-mark=[]
-perc=[]
 tname=[]
 tmark=[]
 tperc=[]
@@ -59,9 +56,9 @@ def login():
             #print(sp)
             if lusername==username and lpassword==password:
                 b=True
-                ##print(b)
                 break
             else:
+                print("Incorrect username / password")
                 continue
         else:
             continue
@@ -102,7 +99,8 @@ def marks():
         tperc.append(sp)
     for i in range(len(tname)):
         jsds.append("{}:{}:{}".format(tmark[i],tname[i],tperc[i]))
-    jsds.sort()
+
+    jsds.sort(reverse=True)
     for i in range(len(tmark)):
         totals+=tmark[i]
     total=totals%len(tmark)
