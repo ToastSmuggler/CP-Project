@@ -93,6 +93,7 @@ def marks():
             if sm <= outof and sm >= 0:
                 x=True
             else:
+                print("Error too many marks")
                 x=False
         tname.append(sn)
         tmark.append(sm)
