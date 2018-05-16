@@ -121,7 +121,8 @@ def marks2(amountpeople,outof):
             smlbl=tk.Entry(wind4)
             smlbl.pack()
             submitbtn2=tk.Button(wind4,command=callback3)
-            submitbtn2.pack()            
+            submitbtn2.pack()            #
+            
         
 #    for i in range(len(tname)):
 #        jsds.append("{}:{}:{}".format(tmark[i],tname[i],tperc[i]))
